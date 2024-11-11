@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado Soberano - Loja Online</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+
+    <!-- CSS para o carrossel e espaçamento entre seções -->
+    <style>
+       
+    </style>
+
+    <!-- Script para o carrossel diretamente no HTML -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          const track = document.querySelector('.carousel-track');
+          const slides = Array.from(track.children);
+          const slideWidth = slides[0].getBoundingClientRect().width;
+          let currentIndex = 0;
+
+          // Função para mover o carrossel para o próximo slide
+          function moveToNextSlide() {
+              currentIndex = (currentIndex + 1) % slides.length;
+              const amountToMove = -slideWidth * currentIndex;
+              track.style.transform = `translateX(${amountToMove}px)`;
+          }
+
+          // Mudar slide a cada 4 segundos
+          setInterval(moveToNextSlide, 4000);
+      });
+    </script>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a href="#">Institucional</a>
+        <a href="#">Nossas Lojas</a>
+        <a href="#">Blog</a>
+        <a href="#">Atendimento</a>
+        <a href="#">Trabalhe com a Gente</a>
+    </div>
+
+    <header class="main-header">
+        <div class="header-logo">
+            <a href="#">
+                <img src="photo_2023-07-06_20-47-18.jpg" alt="Supermercado Soberano" />
+            </a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar um ou mais produtos (ex.: arroz, feijão...)" />
+            <button>Buscar</button>
+        </div>
+        <div class="header-buttons">
+            <button>Entrar</button>
+            <button>Criar uma conta</button>
+        </div>
+    </header>
+
+    <nav class="navbar-categories">
+        <ul>
+            <li><a href="#">Departamentos</a></li>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Receitas</a></li>
+            <li><a href="#">Mais Vendidos</a></li>
+        </ul>
+    </nav>
+
+    <section class="category-highlights">
+        <div class="category">
+            <img src="alimentos.png" alt="Alimentos">
+            <p>Alimentos</p>
+        </div>
+        <div class="category">
+            <img src="açougue.png" alt="Açougue">
+            <p>Açougue</p>
+        </div>
+        <div class="category">
+            <img src="bazar.png" alt="Bazar">
+            <p>Bazar</p>
+        </div>
+        <div class="category">
+            <img src="baby.png" alt="Baby">
+            <p>Baby</p>
+        </div>
+        <div class="category">
+            <img src="congelado.png" alt="Congelado">
+            <p>Congelado</p>
+        </div>
+        <div class="category">
+            <img src="hortifruti.png" alt="Hortifruti">
+            <p>Hortifruti</p>
+        </div>
+        <div class="category">
+            <img src="frios.png" alt="Frios">
+            <p>Frios</p>
+        </div>
+    </section>
+
+    <!-- Carrossel de Imagens -->
+    <section class="main-banner">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="/banner.jpg" alt="Promoção 1"></div>
+                <div class="carousel-slide"><img src="/banner.png" alt="Promoção 2"></div>
+                <div class="carousel-slide"><img src="/banner3.jpg" alt="Promoção 3"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-listing">
+     
+        <div class="container">
+            <div class="product-item">
+                <img src="banana.jpg" alt="Produto 1">
+                <div class="product-info">
+                    <span class="offer-tag">Oferta do Dia</span>
+                    <p class="old-price">R$ 6,79 un.</p>
+                    <p class="price">Por apenas <strong>R$ 4,69 un.</strong></p>
+                    <p class="product-name">Banana Prata 700g</p>
+                    <div class="product-controls">
+                        <input type="number" value="1" min="1">
+                        <button class="buy-button">COMPRAR</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="leite.jpg" alt="Produto 2">
+                <div class="product-info">
+                    <span class="offer-tag">Oferta do Dia</span>
+                    <p class="old-price">R$ 5,19 un.</p>
+                    <p class="price">Por apenas <strong>R$ 4,69 un.</strong></p>
+                    <p class="product-name">Leite UHT Integral Betânia 1L</p>
+                    <div class="product-controls">
+                        <input type="number" value="1" min="1">
+                        <button class="buy-button">COMPRAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+</body>
+</html>
