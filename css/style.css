@@ -212,3 +212,8 @@ section {
     width: 100%;
     height: auto;
 }
+
+.stripe  {
+    margin-top: 0;
+    margin-bottom: 0;
+}
