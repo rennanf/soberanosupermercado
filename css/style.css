@@ -73,21 +73,55 @@ body {
 .category-highlights {
     display: flex;
     justify-content: center;
-    padding: 20px 0;
+    padding: 1px 0;
     background-color: #f8f8f8;
+    margin: 5px 0 auto 0;
+    scroll-behavior: smooth;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    
+}
+.content {
+    display: flex;
+    overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+    scroll-behavior: smooth; /* Anima a rolagem */
+    width: calc(100% - 60px); /* Ajuste conforme necessário para incluir os botões */
 }
 .category {
     text-align: center;
-    margin: 0 15px;
+    margin:10px;
+    padding: 1px;
+    
 }
 .category img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     margin-bottom: 5px;
 }
 .category p {
     font-size: 14px;
     color: #333;
+    white-space: normal;
+    max-width: 60px;
+}
+
+
+.scroll-btn {
+    background-color: #0400fd;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.scroll-btn.left {
+    margin-right: 10px;
+}
+
+.scroll-btn.right {
+    margin-left: 10px;
 }
 
 .main-banner {
