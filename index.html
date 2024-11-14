@@ -13,25 +13,6 @@
        
     </style>
 
-    <!-- Script para o carrossel diretamente no HTML -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-          const track = document.querySelector('.carousel-track');
-          const slides = Array.from(track.children);
-          const slideWidth = slides[0].getBoundingClientRect().width;
-          let currentIndex = 0;
-
-          // Função para mover o carrossel para o próximo slide
-          function moveToNextSlide() {
-              currentIndex = (currentIndex + 1) % slides.length;
-              const amountToMove = -slideWidth * currentIndex;
-              track.style.transform = `translateX(${amountToMove}px)`;
-          }
-
-          // Mudar slide a cada 4 segundos
-          setInterval(moveToNextSlide, 4000);
-      });
-    </script>
 </head>
 <body>
 
@@ -69,6 +50,8 @@
     </nav>
 
     <section class="category-highlights">
+        <button class="scroll-btn left" onclick= "scrollLeft()" >◀</button>
+        <div class="content" id="scrollContainer">
         <div class="category">
             <img src="imagens/alimentos-az.png" alt="Alimentos">
             <p>Alimentos</p>
@@ -137,6 +120,8 @@
             <img src="imagens/snacks-az.png" alt="Snacks">
             <p>Snacks</p>
         </div> 
+        </div>
+        <button class="scroll-btn right" onclick="scrollRight()">▶</button>
 
     </section>
 
@@ -183,6 +168,50 @@
         </div>
     
     </section>
+    <script>
+        // Código do carrossel
+        document.addEventListener("DOMContentLoaded", () => {
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            let currentIndex = 0;
 
+            function moveToNextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                const amountToMove = -slideWidth * currentIndex;
+                track.style.transform = `translateX(${amountToMove}px)`;
+            }
+
+            setInterval(moveToNextSlide, 4000);
+        });
+
+        // Função de adicionar ao carrinho
+        function adicionarAoCarrinho(nomeProduto) {
+            alert(nomeProduto + " foi adicionado ao carrinho!");
+        }
+
+        // Evento para os botões de "Adicionar ao Carrinho"
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll(".buy-button");
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const nomeProduto = button.closest('.product-info').querySelector('.product-name').textContent;
+                    adicionarAoCarrinho(nomeProduto);
+                });
+            });
+        });
+
+        // Funções para rolagem
+        const scrollContainer = document.getElementById('scrollContainer');
+        const scrollAmount = 200;
+
+        function scrollLeft() {
+            scrollContainer.scrollLeft -= scrollAmount;
+        }
+
+        function scrollRight() {
+            scrollContainer.scrollLeft += scrollAmount;
+        }
+    </script>
 </body>
 </html>
