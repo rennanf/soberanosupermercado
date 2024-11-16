@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Configuração de rolagem para a seção de destaques de categoria
     const scrollContainer = document.getElementById('scrollContainer');
-    const scrollAmount = 200; // Ajuste a quantidade de rolagem conforme necessário
+    const scrollAmount = 85; // Ajuste a quantidade de rolagem conforme necessário
 
     if (scrollContainer) {
         // Função para rolar para a esquerda
