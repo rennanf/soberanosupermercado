@@ -5,16 +5,20 @@ body {
 
 /* Topo com links e login */
 .top-bar {
-    background-color: #f8f8f8;
-    padding: 15px;
+    display: flex;
+    background-color: #ffffff;
+    gap: 15px;
     text-align: center;
     font-size: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
 }
 .top-bar a {
-    color: #106eb1;
-    margin: 0 80px;
+    color: inherit;
     text-decoration: none;
     font-weight: bold;
+    padding: 0 20px;
 }
 
 .top-bar a:nth-child(1) {
@@ -42,22 +46,29 @@ body {
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(135deg, #106eb1 0%, #084b8a 100%);
-    padding: 10px 20px;
+    padding: 20px;
     color: white;
+    width: 100%;
+    box-sizing: border-box;
 }
 .header-logo img {
     height: 120px;
-    margin-left: 50%;
+    margin-left: 150px;
 }
 .search-bar {
     display: flex;
-    margin-left: 150px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 0 20px; 
 }
 .search-bar input {
-    padding: 5px;
-    width: 650px;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
     font-family: Arial, sans-serif;
     border-radius: 5px;
+    margin-right: 10px;
 }
 .search-bar button {
     padding: 5px 10px;
@@ -72,7 +83,7 @@ body {
 .header-buttons {
     display: flex; 
     gap: 5px; 
-    margin-right: 8%;
+    margin-right: 150px;
 
 }
 
@@ -136,7 +147,6 @@ body {
     
     
 }
-
 
 .content {
     display: flex;
@@ -299,7 +309,7 @@ body {
 
 .product-listing .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     gap: 20px;
 }
 
@@ -425,7 +435,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     margin: 5px 10px; 
     flex: 1; 
     margin-right: 15%;
@@ -450,6 +460,7 @@ section {
     margin-left: 13.5%;
     margin-right: 8%;
     background-color: white;
+    background-color: #ffffff;
 }
 
 .footer-column {
@@ -503,8 +514,7 @@ section {
     margin-right: 10px;
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 860px) {
     .category {
         width: 100px; 
         margin: 8px; 
@@ -519,10 +529,54 @@ section {
         font-size: 10px;
     }
 
-     .footer-top {
+    .main-header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column; 
+        align-items: center;
+        padding: 20px 0px;
+        width: 100%;
+    }
+
+    .header-logo img {
+        height: 120px; 
+        margin-left: 0;
+    }
+
+    .search-bar {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 10px ; 
+    }
+
+    .search-bar input {
+        width: 73%; 
+    }
+
+    .header-buttons {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        gap: 10px; 
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .header-buttons button {
+        padding: 10px 40px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .navbar-categories ul {
+        flex-wrap: wrap; /* Quebra as categorias em várias linhas, se necessário */
+    }
+
+    .footer-top {
         flex-direction: column; 
         align-items: flex-start; 
-     }
+    }
     
     .contact-box {
         width: 100%; 
@@ -531,7 +585,7 @@ section {
         }
     
     .relationship-text {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         }
     
     
