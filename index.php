@@ -332,7 +332,7 @@ if (isset($_SESSION['usuario'])) {
                     <span class="offer-tag">Oferta do Dia</span>
                     <p class="old-price">R$ 8,99 un.</p>
                     <p class="price">Por apenas <strong>R$ 6,69 un.</strong></p>
-                    <p class="product-name">Leite Longa Vida Integral Betânia</p>
+                    <p class="product-name">Leite Betânia Longa Vida Integral </p>
                     <div class="product-controls">
                         <input type="number" value="1" min="1">
                         <button class="buy-button">COMPRAR</button>
@@ -402,7 +402,7 @@ if (isset($_SESSION['usuario'])) {
                     <span class="offer-tag">Oferta do Dia</span>
                     <p class="old-price">R$ 25,99 un.</p>
                     <p class="price">Por apenas <strong>R$ 18,89 un.</strong></p>
-                    <p class="product-name">Carne Meio Da Asa De Frango Congelada Orgânico Korin 700g</p>
+                    <p class="product-name">Asa De Frango Congelada Orgânico Korin 700g</p>
                     <div class="product-controls">
                         <input type="number" value="1" min="1">
                         <button class="buy-button">COMPRAR</button>
@@ -471,7 +471,7 @@ if (isset($_SESSION['usuario'])) {
                     <span class="offer-tag">Oferta do Dia</span>
                     <p class="old-price">R$ 15,99 un.</p>
                     <p class="price">Por apenas <strong>R$ 14,99 un.</strong></p>
-                    <p class="product-name">Kit 1 Coca-Cola Original + 1 Fanta Laranja 2L</p>
+                    <p class="product-name">Kit Coca-Fanta 2L</p>
                     <div class="product-controls">
                         <input type="number" value="1" min="1">
                         <button class="buy-button">COMPRAR</button>
@@ -481,6 +481,21 @@ if (isset($_SESSION['usuario'])) {
 
         </div>
     </section>
+
+<!-- Botão expansível do carrinho -->
+<div class="cart-button-container">
+    <button id="cart-button">🛒 Carrinho (<span id="cart-count">0</span>)</button>
+    <div id="cart-modal" class="cart-modal">
+        <div id="cart-items">
+            <!-- Lista de produtos -->
+        </div>
+        <div class="cart-summary">
+            <p>Total: <span id="total-price">R$ 0,00</span></p>
+            <button id="checkout-btn" class="checkout-btn" disabled>Finalizar Compra</button>
+        </div>
+    </div>
+</div>
+
 
     <footer class="footer-container">
         <div class="footer-top">
