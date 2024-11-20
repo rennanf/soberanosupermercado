@@ -1,9 +1,9 @@
 <?php
 session_start(); 
 if (isset($_SESSION['usuario'])) {
-    echo 'Bem-vindo, ' . $_SESSION['usuario'];
+    // echo 'Bem-vindo, ' . $_SESSION['usuario'];
 } else {
-    echo 'Você não está logado';
+    // echo 'Você não está logado';
 }
 ?>
 <!DOCTYPE html>
@@ -46,10 +46,10 @@ if (isset($_SESSION['usuario'])) {
             <a href="logout.php" class="button">Logout</a>
         <?php else: ?>
             
-            <a href="loginform.php" class="button">
+            <a href="loginform.php" class="button login">
                 <span class="material-icons">login</span> Entrar
             </a>
-            <a href="cadastroform.php" class="button">
+            <a href="cadastroform.php" class="button register">
                 <span class="material-icons">person_add</span> Criar uma conta
             </a>
         <?php endif; ?>

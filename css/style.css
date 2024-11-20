@@ -83,7 +83,7 @@ body {
 .header-buttons {
     display: flex; 
     gap: 5px; 
-    margin-right: 150px;
+    margin-right: 40px;
 
 }
 
@@ -683,4 +683,48 @@ section {
     
     
     
+}
+
+/* Estilo geral para os botões */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão de login */
+.button.login {
+    background-color: #d0c116; 
+    color: #fff;
+}
+
+.button.login:hover {
+    background-color: #cabc60; 
+}
+
+.button.register {
+    background-color: #008CBA;
+    color: #fff;
+}
+
+.button.register:hover {
+    background-color: #007bb5;
+}
+
+
+.button .material-icons {
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
 }
