@@ -262,7 +262,8 @@ body {
     display: block;
 }
 
-/* Botão do carrinho e modal simplificados */
+/*  Botão do carrinho e modal simplificados */
+
 .cart-button-container {
     position: fixed;
     bottom: 20px;
@@ -295,11 +296,11 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     display: none;
-    
+
 }
 
 #cart-items {
-    max-height: 500px;
+    max-height: 300px;
     overflow-y: auto;
     margin-bottom: 10px;
     font-size: 14px;
@@ -310,14 +311,14 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
-    
+
 }
 
 .cart-item span {
     flex: 1;
     text-align: center;
 
-    
+
 }
 
 .cart-item .remove-btn {
@@ -334,7 +335,7 @@ body {
     margin-top: 10px;
     font-size: 14px;
     font-weight: bold;
-    
+
 }
 
 .checkout-btn {
@@ -356,6 +357,22 @@ body {
     background-color: #45a049;
 }
 
+.cart-header {
+    background-color: #007bff; 
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 8px; 
+    border-top-right-radius: 8px;
+}
+
+.cart-logo {
+    max-height: 40px; 
+    max-width: 80%; 
+}
+
+/* gaal */
 
 .main-banner {
     width: 100%;
