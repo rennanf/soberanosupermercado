@@ -18,6 +18,8 @@ if (isset($_SESSION['usuario'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
 
@@ -36,8 +38,8 @@ if (isset($_SESSION['usuario'])) {
             </a>
         </div>
         <div class="search-bar">
-            <input type="text" placeholder="Buscar um ou mais produtos (ex.: arroz, feijão...)" />
-            <button>Buscar</button>
+            <input id="searchInput" type="text" placeholder="Buscar um ou mais produtos (ex.: arroz, feijão...)" />
+            <button onclick="searchProduct()">Buscar</button>
         </div>
         <div class="header-buttons">
         <?php if (isset($_SESSION['usuario'])): ?>
