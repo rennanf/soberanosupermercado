@@ -3,7 +3,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Função de adicionar ao carrinho
     function adicionarAoCarrinho(nomeProduto) {
-        alert(nomeProduto + " foi adicionado ao carrinho!");
+        Swal.fire({
+            icon: 'success',
+            title: 'Adicionado ao carrinho!',
+            text: `${nomeProduto} foi adicionado ao carrinho.`,
+            confirmButtonColor: '#c9212e'
+        });
     }
 
     // Adicionar evento aos botões "Adicionar ao Carrinho"
@@ -157,3 +162,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+function searchProduct() {
+    const searchInput = document.getElementById('searchInput').value.trim();
+    if (searchInput) {
+        window.location.href = `pesquisaexemplo.php?query=${encodeURIComponent(searchInput)}`;
+    } else {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Busca vazia',
+            text: 'Por favor, insira um termo de busca.',
+            confirmButtonColor: '#c9212e'
+        });
+    }
+}
+
+
