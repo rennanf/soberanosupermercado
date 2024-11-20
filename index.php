@@ -488,6 +488,9 @@ if (isset($_SESSION['usuario'])) {
 <div class="cart-button-container">
     <button id="cart-button">🛒 Carrinho (<span id="cart-count">0</span>)</button>
     <div id="cart-modal" class="cart-modal">
+    <div class="cart-header">
+    <img src="/imagens/photo_2023-07-06_20-47-18.jpg" alt="Logo do Supermercado" class="cart-logo">
+    </div>
         <div id="cart-items">
             <!-- Lista de produtos -->
         </div>
