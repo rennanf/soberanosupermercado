@@ -264,6 +264,7 @@ body {
 
 /*  Botão do carrinho e modal simplificados */
 
+
 .cart-button-container {
     position: fixed;
     bottom: 20px;
@@ -296,7 +297,21 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     display: none;
+}
 
+.cart-header {
+    background-color: #007bff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.cart-logo {
+    max-height: 40px;
+    max-width: 80%;
 }
 
 #cart-items {
@@ -311,21 +326,71 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
+    gap: 10px;
+
 
 }
 
 .cart-item span {
-    flex: 1;
     text-align: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
 
-
+.cart-item .item-name {
+    flex: 1;
+    word-wrap: break-word; /* Quebra a linha quando necessário */
+    word-break: break-word;
+    text-align: left; /* Alinha o texto à esquerda */
 }
 
 .cart-item .remove-btn {
     color: red;
     font-weight: bold;
     cursor: pointer;
-    margin-right: 5px;
+}
+
+.cart-item .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart-item .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart-item .quantity-controls button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.cart-item .quantity-controls button:hover {
+    background-color: #e0e0e0;
+}
+
+.cart-item .item-price {
+    text-align: right; /* Alinha valores à direita */
+    min-width: 70px; /* Define um espaço fixo para os preços */
+}
+
+.cart-item .remove-btn {
+    margin-left: auto; /* Empurra o botão para a direita */
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.quantity-controls button:hover {
+    background-color: #e0e0e0;
 }
 
 .cart-summary {
@@ -335,7 +400,6 @@ body {
     margin-top: 10px;
     font-size: 14px;
     font-weight: bold;
-
 }
 
 .checkout-btn {
@@ -357,20 +421,6 @@ body {
     background-color: #45a049;
 }
 
-.cart-header {
-    background-color: #007bff; 
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top-left-radius: 8px; 
-    border-top-right-radius: 8px;
-}
-
-.cart-logo {
-    max-height: 40px; 
-    max-width: 80%; 
-}
 
 /* gaal */
 

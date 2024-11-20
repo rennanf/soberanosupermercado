@@ -84,25 +84,27 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderCart() {
         cartItemsContainer.innerHTML = '';
         let total = 0;
-
+    
         cart.forEach(item => {
             total += item.price * item.quantity;
-
-            const truncatedName = item.name.split(' ').slice(0, 3).join(' ');
-
+    
             const cartItem = document.createElement('div');
             cartItem.className = 'cart-item';
-
+    
             cartItem.innerHTML = `
+                <span class="item-name">${item.name}</span>
+                <div class="quantity-controls">
+                    <button class="decrease-btn" data-id="${item.id}">-</button>
+                    <span>${item.quantity}</span>
+                    <button class="increase-btn" data-id="${item.id}">+</button>
+                </div>
+                <span class="item-price">R$ ${(item.price * item.quantity).toFixed(2)}</span>
                 <span class="remove-btn" data-id="${item.id}">x</span>
-                <span>${truncatedName}</span>
-                <span>${item.quantity}</span>
-                <span>R$ ${item.price.toFixed(2)}</span>
             `;
-
+    
             cartItemsContainer.appendChild(cartItem);
         });
-
+    
         totalPriceElement.textContent = `R$ ${total.toFixed(2)}`;
         cartCountElement.textContent = cart.length;
         checkoutButton.disabled = cart.length === 0;
@@ -127,6 +129,24 @@ document.addEventListener("DOMContentLoaded", () => {
         renderCart();
     }
 
+    // Aumenta a quantidade de um item
+    function increaseQuantity(productId) {
+        const product = cart.find(item => item.id === productId);
+        if (product) {
+            product.quantity++;
+            renderCart();
+        }
+    }
+
+    // Diminui a quantidade de um item
+    function decreaseQuantity(productId) {
+        const product = cart.find(item => item.id === productId);
+        if (product && product.quantity > 1) {
+            product.quantity--;
+            renderCart();
+        }
+    }
+
     // Alternar visibilidade do modal do carrinho
     cartButton.addEventListener('click', () => {
         cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
@@ -139,15 +159,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const productInfo = button.closest('.product-item');
             const productName = productInfo.querySelector('.product-name').textContent;
             const productPrice = parseFloat(productInfo.querySelector('.price strong').textContent.replace('R$', ''));
-            const productImage = productInfo.querySelector('img').src;
-            const productQuantityInput = productInfo.querySelector('input[type="number"]');
-            const quantity = parseInt(productQuantityInput.value, 10) || 1; // Pega a quantidade ou assume 1 como padrão
+            const quantity = parseInt(productInfo.querySelector('input[type="number"]').value, 10) || 1;
 
             const product = {
-                id: productName, // Usando o nome como ID (único por produto)
+                id: productName,
                 name: productName,
-                price: productPrice,
-                image: productImage
+                price: productPrice
             };
 
             addToCart(product, quantity);
@@ -160,21 +177,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const productId = e.target.dataset.id;
             removeFromCart(productId);
         }
+
+        if (e.target.classList.contains('increase-btn')) {
+            const productId = e.target.dataset.id;
+            increaseQuantity(productId);
+        }
+
+        if (e.target.classList.contains('decrease-btn')) {
+            const productId = e.target.dataset.id;
+            decreaseQuantity(productId);
+        }
     });
 });
 
-function searchProduct() {
-    const searchInput = document.getElementById('searchInput').value.trim();
-    if (searchInput) {
-        window.location.href = `pesquisaexemplo.php?query=${encodeURIComponent(searchInput)}`;
-    } else {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Busca vazia',
-            text: 'Por favor, insira um termo de busca.',
-            confirmButtonColor: '#c9212e'
-        });
-    }
-}
 
 
