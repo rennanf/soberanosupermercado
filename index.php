@@ -62,14 +62,15 @@ if (isset($_SESSION['usuario'])) {
         
     </header>
     <hr class="stripe">
-    <nav class="navbar-categories">
-        <ul>
-            <li><a href="#">Departamentos</a></li>
-            <li><a href="#">Ofertas</a></li>
-            <li><a href="#">Receitas</a></li>
-            <li><a href="#">Mais Vendidos</a></li>
-        </ul>
-    </nav>
+    <div class="navbar-categories">
+    <ul>
+        <li><a href="#" data-category="departamentos">Departamentos</a></li>
+        <li><a href="#" data-category="ofertas">Ofertas</a></li>
+        <li><a href="#" data-category="receitas">Receitas</a></li>
+        <li><a href="#" data-category="mais-vendidos">Mais Vendidos</a></li>
+    </ul>
+</div>
+
 
     <section class="category-highlights">
         <button class="scroll-btn left" onclick="scrollLeft()">
