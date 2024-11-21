@@ -87,6 +87,11 @@ body {
 
 }
 
+.header-buttons a {
+   color: #ffffff;
+   background-color: #ff3333;
+}
+
 .header-buttons button {
     display: flex;
     background-color: #ffffff;
@@ -674,6 +679,31 @@ section {
     margin-right: 10px;
 }
 
+@media (max-width: 1250px) {
+
+    .footer-top {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .relationship-text {
+        padding-bottom: 10px;
+        text-align: center ;
+        margin: 0;
+        }
+    
+    .contact-box {
+        width: 75%; 
+        margin: 0; 
+        gap: 30px;
+        text-align: center;
+        }  
+
+}
+
 @media (max-width: 860px) {
     .category {
         width: 100px; 
@@ -729,28 +759,161 @@ section {
         text-align: center;
     }
 
+    .navbar-categories {
+        display: flex;
+        background-color: #106eb1;
+        text-align: center;
+        padding: 10px 0;
+        flex-direction: row; /* Deixa as categorias lado a lado em telas maiores */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha, se necessário */
+        gap: 10px; /* Adiciona espaçamento entre as categorias */
+    }
+
+    .navbar-categories ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex; /* Garante o alinhamento horizontal dos textos */
+        flex-wrap: wrap; /* Permite quebra em várias linhas em telas menores */
+        justify-content: center; /* Centraliza os itens no contêiner */
+        gap: 10px; /* Espaçamento entre as categorias */
+    }
+
+    .navbar-categories ul li {
+        font-size: 14px; /* Reduz o tamanho da fonte em telas menores */
+        padding: 10px; /* Ajusta o espaçamento interno */
+    }
+
     .navbar-categories ul {
         flex-wrap: wrap; /* Quebra as categorias em várias linhas, se necessário */
     }
 
     .footer-top {
+        display: flex;
         flex-direction: column; 
-        align-items: flex-start; 
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
     }
+
+    .relationship-text {
+        padding-bottom: 10px;
+        text-align: center ;
+        margin: 0;
+        }
     
     .contact-box {
-        width: 100%; 
+        flex-direction: column; 
+        width: 90%; 
         margin: 0; 
-        justify-content: flex-start; 
-        }
+        gap: 10px;
+        text-align: center;
+    }
     
-    .relationship-text {
+    .category-highlights {
+        display: flex;
+        justify-content: center;
+        padding: 1px ;
+        background-color: #ffffff;
+        margin: 5px;
+        scroll-behavior: smooth;
+        align-items: center;
+        overflow: hidden;
+     
+        
+    }
+    
+    .scroll-btn {
+        background-color: transparent;
+        color: blue;
+        border: black;
+        cursor: pointer;
+        padding: 10px 0;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    
+    
+    .scroll-btn.left {
+        margin-right: 20px;
+        padding-left: 20px;
+        
+    }
+    
+    .scroll-btn.right {
+        margin-left: 20px;
+        padding-right: 20px;
+       
+    }
+
+    .footer-bottom {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        padding: 20px 5%;
+        margin: 0;
+        background-color: white;
+        background-color: #ffffff;
+    }
+
+    .footer-column {
+        flex: 1;
+        margin: 0;
+    }
+    
+    .footer-column h4 {
         margin-bottom: 10px;
-        }
+        color: #333333;
+    }
+    .footer-column a{
+        font-size: 12px;
+        color: #555555;
+    }
     
+    .footer-column p, .footer-column ul {
+        font-size: 12px;
+        color: #555555;
+    }
     
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-column ul li {
+        margin-bottom: 5px;
+    }
+    
+    .footer-column ul li a {
+        color: #555555;
+        text-decoration: none;
+    }
+    
+    .footer-column ul li a:hover {
+        text-decoration: underline;
+    }
+    .social-icons a {
+        margin-right: 10px;
+        display: inline-block;
+    }
+    
+    .social-icons img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .app-links img {
+        width: 120px;
+        margin-right: 10px;
+    }
     
 }
+
+
 
 /* Estilo geral para os botões */
 .button {
@@ -772,7 +935,7 @@ section {
 
 /* Botão de login */
 .button.login {
-    background-color: #d0c116; 
+    background-color: #48b82c; 
     color: #fff;
 }
 
@@ -795,3 +958,4 @@ section {
     margin-right: 8px;
     vertical-align: middle;
 }
+
