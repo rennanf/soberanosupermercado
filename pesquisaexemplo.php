@@ -18,6 +18,8 @@ if (isset($_SESSION['usuario'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
 
@@ -101,6 +103,23 @@ if (isset($_SESSION['usuario'])) {
             </div>
         </div>
         </section>
+
+        <!-- Botão expansível do carrinho -->
+<div class="cart-button-container">
+    <button id="cart-button">🛒 Carrinho (<span id="cart-count">0</span>)</button>
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-header">
+            <img src="/imagens/photo_2023-07-06_20-47-18.jpg" alt="Logo do Supermercado" class="cart-logo">
+        </div>
+        <div id="cart-items">
+            <!-- Lista de produtos será gerada aqui -->
+        </div>
+        <div class="cart-summary">
+            <button id="checkout-btn" class="checkout-btn" disabled>Finalizar Compra</button>
+            <p>Total: <span id="total-price">R$ 0,00</span></p>
+        </div>
+    </div>
+</div>
 
         <footer class="footer-container">
         <div class="footer-top">
