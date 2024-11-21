@@ -155,18 +155,25 @@ session_start();
             </a>
         </div>
         <div class="header-buttons">
-            <?php if (isset($_SESSION['usuario'])): ?>
-                <span class="user-name"><?php echo $_SESSION['usuario']; ?></span>
-                <a href="logout.php" class="button">Logout</a>
-            <?php else: ?>
-                <a href="loginform.php" class="button login">
-                    <span class="material-icons">login</span> Entrar
-                </a>
-                <a href="cadastroform.php" class="button register">
-                    <span class="material-icons">person_add</span> Criar uma conta
-                </a>
-            <?php endif; ?>
-        </div> 
+        <?php if (isset($_SESSION['usuario'])): ?>
+            
+            
+            <span class="button" style="background-color:#d0c116;" >
+            <span class="material-icons">account_circle</span><?php echo $_SESSION['usuario']; ?>
+            </span>
+            <a href="logout.php" class="button">
+            <span class="material-icons">logout</span>Logout
+            </a>
+        <?php else: ?>
+            
+            <a href="loginform.php" class="button login">
+                <span class="material-icons">login</span> Entrar
+            </a>
+            <a href="cadastroform.php" class="button register">
+                <span class="material-icons">person_add</span> Criar uma conta
+            </a>
+        <?php endif; ?>
+    </div>
     </header>
 
     <div class="container">
