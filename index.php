@@ -43,9 +43,14 @@ if (isset($_SESSION['usuario'])) {
         </div>
         <div class="header-buttons">
         <?php if (isset($_SESSION['usuario'])): ?>
-        
-            <span class="user-name"><?php echo $_SESSION['usuario']; ?></span>
-            <a href="logout.php" class="button">Logout</a>
+            
+            
+            <span class="button" style="background-color:#d0c116;" >
+            <span class="material-icons">account_circle</span><?php echo $_SESSION['usuario']; ?>
+            </span>
+            <a href="logout.php" class="button">
+            <span class="material-icons">logout</span>Logout
+            </a>
         <?php else: ?>
             
             <a href="loginform.php" class="button login">
@@ -294,6 +299,7 @@ if (isset($_SESSION['usuario'])) {
                         <li><a href="#">Biscoitos e bolachas</a></li>
                         <li><a href="#">Doces e sobremesas</a></li>
                     </ul>
+                    
                 </div>
             </div>
             <!-- Mais categorias aqui... -->
